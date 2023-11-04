@@ -1,0 +1,99 @@
+* 
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.component
+{
+    width: 100%;
+}
+
+.balance 
+{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+
+.wrapper
+{
+    margin-top: -1.5rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+}
+
+.paymentHeader
+{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.paymentItem
+{
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1rem 4rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.paymentHistory > button
+{
+    padding: 1rem 2rem;
+    background-color: #F05D5E;
+    border: none;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.paymentHistory > button > p
+{
+    color: #ffffff;
+}
+
+.subscription 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    margin: 2rem 0;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+.subscription > button 
+{
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 1.25rem;
+    background-color: #F05D5E;
+    color: #ffffff;
+}
+
+.textPart > span 
+{
+    display: inline;
+}
+
+.subHeader 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2rem;
+}
+
+.subHeader > span 
+{
+    padding: 0 1rem;
+    color: #ffffff;
+    background-color: #73E3B8;
+    border-radius: 1rem;
+}
