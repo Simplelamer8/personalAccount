@@ -19,10 +19,10 @@
 
 .wrapper
 {
-    margin-top: -1.5rem;
+    margin-top: -24px;
     background-color: #ffffff;
-    border-radius: 1rem;
-    padding: 3rem 2rem;
+    border-radius: 16px;
+    padding: 48px 32px;
 }
 
 .paymentHeader
@@ -35,9 +35,9 @@
 .paymentItem
 {
     background-color: #ffffff;
-    border-radius: 1rem;
-    padding: 1rem 4rem;
-    margin-top: 1rem;
+    border-radius: 16px;
+    padding: 16px 64px;
+    margin-top: 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,10 +45,11 @@
 
 .paymentHistory > button
 {
-    padding: 1rem 2rem;
+    margin-top: 15px;
+    padding: 16px 32px;
     background-color: #F05D5E;
     border: none;
-    border-radius: 1rem;
+    border-radius: 16px;
     width: 100%;
 }
 
@@ -63,16 +64,16 @@
     align-items: center;
     justify-content: space-between;
     background-color: #ffffff;
-    margin: 2rem 0;
-    border-radius: 1rem;
-    padding: 2rem;
+    margin: 32px 0;
+    border-radius: 16px;
+    padding: 32px;
 }
 
 .subscription > button 
 {
-    padding: 1rem 3rem;
+    padding: 16px 48px;
     border: none;
-    border-radius: 1.25rem;
+    border-radius: 20px;
     background-color: #F05D5E;
     color: #ffffff;
 }
@@ -87,13 +88,120 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 2rem;
+    padding-right: 32px;
+}
+
+.mobileText
+{
+    display: none;
 }
 
 .subHeader > span 
 {
-    padding: 0 1rem;
+    padding: 0 16px;
     color: #ffffff;
     background-color: #73E3B8;
-    border-radius: 1rem;
+    border-radius: 16px;
+}
+
+@media screen and (max-width: 768px)
+{
+    .subscription
+    {
+        display: none;
+        font-size: 10px;
+        padding: 0;
+        max-width: 100%;
+    }
+    .paymentHistory
+    {
+        font-size: 13px;
+    }
+    .paymentHistory > button 
+    {
+        width: auto;
+        margin-top: 10px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 5px 50px;
+    }
+    .paymentItem
+    {
+        padding: 10px 20px;
+    }
+    .mobileText
+    {
+        text-align: center;
+        margin-top: 10px;
+        display: block;
+    }
+    .mobileRemoveText
+    {
+        display: none;
+    }
+    .wrapper 
+    {
+        padding: 40px 32px;
+        padding-bottom: 20px;
+    }
+    .balance 
+    {
+        width: 100%;
+    }
+    .balance > span 
+    {
+        color: #000000;
+    }
+}
+
+@media screen and (max-width: 425px)
+{
+    .subscription
+    {
+        display: none;
+        font-size: 10px;
+        padding: 0;
+        max-width: 100%;
+    }
+    .paymentHistory
+    {
+        font-size: 10px;
+    }
+    .paymentHistory > button 
+    {
+        width: auto;
+        margin-top: 10px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 5px 50px;
+    }
+    .paymentItem
+    {
+        padding: 10px;
+    }
+    .mobileText
+    {
+        text-align: center;
+        margin-top: 10px;
+        display: block;
+    }
+    .mobileRemoveText
+    {
+        display: none;
+    }
+    .wrapper 
+    {
+        padding: 40px 32px;
+        padding-bottom: 20px;
+    }
+    .balance 
+    {
+        width: 100%;
+    }
+    .balance > span 
+    {
+        color: #000000;
+    }
 }

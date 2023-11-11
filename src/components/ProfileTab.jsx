@@ -52,6 +52,11 @@ const ProfileTab = (props) =>
             alert("Подтверждение пароля не совпадает новому")
             return;
         }
+        if (passwordInputs.password == "" && passwordInputs.newPassword == "" && passwordInputs.confirmPassword == "")
+        {
+            setIsPasswordEditMode((prevMode) => !prevMode);
+            return;
+        }
         if (passwordInputs.password == "" && isPasswordEditMode === true)
         {
             turnPassword = true;
@@ -77,9 +82,35 @@ const ProfileTab = (props) =>
         setPasswordInputs({...passwordInputs, obj});
       }
       
+    function checkPhoneNumber(str)
+    {
+        for (var i = 0; i < str.length; i++)
+        {
+            if ((str[i] < "0" || str[i] > "9") && str[i] != "+")
+            {
+                return false;
+            }
+        }
+        return true;
+    }
 
     const handleEditMode = () =>
     {
+
+        for (var key in column2)
+        {
+            if (column2[key] == "" && key != "whattsapp")
+            {
+                alert(`Заполните поле "${column1[key]}"`);
+                return;
+            }
+            if ((key == "visiblePhoneNumer" || key == "whattsapp") && !checkPhoneNumber(column2[key]))
+            {
+                alert(`Неправильный формат поля "${column1[key]}"`);
+                return;
+            }
+        }
+
         setIsEditMode((prevMode) => !prevMode);
     };
 
@@ -90,8 +121,7 @@ const ProfileTab = (props) =>
         setColumn2({...column2, obj});
     }
 
-    return(//use as less div's as possible! HTML takes more than CSS code
-    //padding margin 50px
+    return(//I have a question regarding !importantn in mobileLayout class in CSS
         <div className={styles.component}>
             <div className={styles.wrapper}>
                 <div className={styles.mainContent}>
@@ -100,17 +130,25 @@ const ProfileTab = (props) =>
                             {
                                 isEditMode?(
                                 column1Arr.map((index) => (
-                                    <tr>
-                                       <td>{column1[index]}</td>
-                                       <input onChange={(e) => (handleInputChange(e, index))} value={column2[index]} />
-                                    </tr>
+                                    index != "whattsapp" ? ( 
+                                        <tr className={styles.mobileLayout}>
+                                            <td>{column1[index] + "*"}</td>
+                                            <input onChange={(e) => (handleInputChange(e, index))} value={column2[index]} />
+                                        </tr>
+                                    ):
+                                    (
+                                        <tr className={styles.mobileLayout}>
+                                            <td>{column1[index]}</td>
+                                            <input onChange={(e) => (handleInputChange(e, index))} value={column2[index]} />
+                                        </tr>
+                                    )
                                 )))
                                 :
                                 (
                                     column1Arr.map((index) => (
                                         <tr>
-                                            <td>{column1[index]}</td>
-                                            <td>{column2[index]}</td> 
+                                            <td><p>{column1[index]}</p></td>
+                                            <td><p>{column2[index]}</p></td> 
                                         </tr>
                                     ))
                                 )
@@ -118,7 +156,7 @@ const ProfileTab = (props) =>
                         </tbody>
                     </table>
                 </div>
-                <button className={styles.edit} onClick={handleEditMode}>{isEditMode ? "Сохранить" : "Изменить"}</button>
+                <button className={styles.edit} onClick={handleEditMode}>{isEditMode ? "Сохранить" : "Редактировать"}</button>
             </div>
             <div className={styles.changePassword}>
                 <table>
@@ -126,7 +164,7 @@ const ProfileTab = (props) =>
                         {
                             isPasswordEditMode ? (
                             password1.map((index) => (
-                                <tr>
+                                <tr className={styles.mobileLayout}>
                                    <td>
                                         <p>{passwordColumn1[index]}</p>
                                     </td> 
@@ -136,7 +174,7 @@ const ProfileTab = (props) =>
                                 </tr>
                             )))
                             :(
-                                <div></div>
+                                <></>
                             )
                         }
                     </tbody>

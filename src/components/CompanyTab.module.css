@@ -8,20 +8,21 @@
 
 .mainContent
 {
-    margin-top: -1.5rem;
+    margin-top: -16px;
     background-color: #ffffff;
     width: 100%;
-    padding: 4rem 2rem;
+    padding: 64px 32px;
+    border-radius: 10px;
 }
 
 .mainContent > table 
 {
-    border-spacing: 1rem;
+    border-spacing: 16px;
 }
 
 .mainContent > table > tr > td 
 {
-    padding-bottom: 1rem;
+    padding-bottom: 16px;
 }
 
 .mainContent > table > tr > td:nth-child(2) > p
@@ -43,10 +44,10 @@
 
 .selectFile 
 {
-    padding: 0.5rem 1rem;
+    padding: 8px 16px;
     background-color: #F05D5E;
     color: #ffffff;
-    border-radius: 1rem;
+    border-radius: 16px;
     border: none;
     cursor: pointer;
 }
@@ -55,4 +56,52 @@
 {
     background-color: #F05D5E;
     display: block;
+}
+
+@media screen and (max-width: 768px)
+{
+    .tableLastElement 
+    {
+        display: block;
+    }
+    .fileName 
+    {
+        word-break: break-all;
+    }
+    .tableLastElement > label 
+    {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 425px)
+{
+    .mainContent
+    {
+        padding: 30px 15px;
+        font-size: 10px;
+        flex-wrap: wrap;
+        padding-bottom: 100px;
+    }
+    .mainContent > table 
+    {
+        border-spacing: 5px;
+    }
+    .mainContent > table > tr:nth-child(1)
+    {
+        margin-right: 5px;
+    }
+    .tableLastElement 
+    {
+        display: block;
+    }
+    .fileName 
+    {
+        display: block;
+    }
+    .tableLastElement > label
+    {
+        text-align: center;
+        display: block;
+    }
 }
