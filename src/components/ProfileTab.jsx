@@ -33,11 +33,11 @@ const ProfileTab = (props) =>
 
     const [column2, setColumn2] = useState(
         {name: "Азамат",
-        surname: "Беркимбаев",
-        phoneNumber: "+77476023694",
-        email: "azamat.berkimbayev@alumni.nu.edu.kz",
-        visiblePhoneNumer: "+77476023694",
-        whattsapp: "+77476023694"}
+        surname: "Азамат",
+        phoneNumber: "+71234567890",
+        email: "user@gmail.com",
+        visiblePhoneNumer: "+71234567890",
+        whattsapp: "+71234567890"}
     );
 
     let column1Arr = Object.keys(column1);
